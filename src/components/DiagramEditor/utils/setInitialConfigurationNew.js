@@ -4,7 +4,8 @@ import {
   mxKeyHandler,
   mxClient,
   mxUtils,
-  mxEvent
+  mxEvent,
+  mxEdgeHandler
 } from "mxgraph-js";
 import initToolbar from "./initToolbar";
 
@@ -23,7 +24,7 @@ export default function setInitialConfiguration(graph, toolbarRef) {
     var parent = graph.getDefaultParent();
 
     // Enables tooltips, new connections and panning
-    /*
+
     graph.setPanning(true);
     graph.setTooltips(true);
     graph.setConnectable(true);
@@ -32,7 +33,8 @@ export default function setInitialConfiguration(graph, toolbarRef) {
     graph.setVertexLabelsMovable(false);
     graph.setGridEnabled(true);
     graph.setAllowDanglingEdges(false);
-    */
+
+    mxEdgeHandler.prototype.addEnabled = true;
 
     graph.getModel().beginUpdate();
     try {

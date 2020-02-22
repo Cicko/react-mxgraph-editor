@@ -2,8 +2,8 @@ import addToolbarItem from "./addToolbarItem";
 import initToolbar from "./initToolbar";
 import getStyleByKey from "./getStyleByKey";
 import getStyleStringByObj from "./getStyleStringByObj";
-import setInitialConfiguration from "./setInitialConfiguration";
-import setInitialConfigurationNew from "./setInitialConfigurationNew";
+import setInitialConfiguration from "./setInitialConfigurationNew";
+import configureKeyBindings from "./configureKeyBindings";
 
 export {
   addToolbarItem,
@@ -11,5 +11,5 @@ export {
   getStyleByKey,
   getStyleStringByObj,
   setInitialConfiguration,
-  setInitialConfigurationNew
+  configureKeyBindings
 };

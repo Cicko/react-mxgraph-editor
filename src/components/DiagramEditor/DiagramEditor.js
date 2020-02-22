@@ -2,18 +2,18 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import "./styles/diagramEditor.css";
 import { default as MxGraph } from "mxgraph";
-import { mxGraph } from "mxgraph-js";
+import { mxGraph, mxEvent, mxVertexHandler } from "mxgraph-js";
 import { CompactPicker } from "react-color";
 import {
   initToolbar,
   getStyleByKey,
   getStyleStringByObj,
   setInitialConfiguration,
-  setInitialConfigurationNew
+  configureKeyBindings
 } from "./utils";
 
 const {
-  mxEvent,
+  // mxEvent,
   // mxGraph,
   mxConnectionHandler,
   mxImage,
@@ -45,14 +45,15 @@ export default function App(props) {
   const [graph, setGraph] = React.useState(null);
 
   React.useEffect(() => {
-    mxEvent.disableContextMenu(containerRef.current);
     if (!graph) {
+      mxEvent.disableContextMenu(containerRef.current);
       setGraph(new mxGraph(containerRef.current));
     }
     // Adds cells to the model in a single step
     if (graph) {
       // setInitialConfiguration(graph, toolbarRef);
-      setInitialConfigurationNew(graph, toolbarRef);
+      setInitialConfiguration(graph, toolbarRef);
+      configureKeyBindings(graph);
 
       // Updates the display
       graph.getModel().endUpdate();
@@ -193,6 +194,7 @@ export default function App(props) {
     }
     setSelected(evt.cells[0]);
     setColorPickerVisible(false);
+    console.log(mxVertexHandler.getSelectionColor());
   };
 
   const onElementAdd = evt => {

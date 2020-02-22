@@ -31,6 +31,8 @@ export default function initToolbar(graph, tbContainer) {
 
   // Enables new connections in the graph
   graph.setConnectable(true);
+
+  // Allow multiple edges between two vertices
   graph.setMultigraph(false);
 
   // Stops editing on enter or escape keypress

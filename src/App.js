@@ -6,16 +6,16 @@ import sampleJsonData from "./sampleJsonData.json";
 export default function App() {
   const [data, setData] = React.useState(sampleJsonData);
   const onChange = evt => {
-    // console.log("on Change");
+    console.log("on Change");
   };
   const onSelected = evt => {
-    // console.log("selected");
+    console.log("selected");
   };
   const onElementAdd = evt => {
-    // console.log("On element add");
+    console.log("On element add");
   };
   const onDragEnd = evt => {
-    // console.log("On Drag end");
+    console.log("On Drag end");
   };
 
   return (
