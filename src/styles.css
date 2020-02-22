@@ -1,0 +1,13 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 50vh;
+  min-height: 600px;
+  min-width: 800px;
+  width: 70vw;
+}

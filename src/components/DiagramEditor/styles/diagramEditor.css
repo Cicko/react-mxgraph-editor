@@ -1,0 +1,59 @@
+.mxgraph-container {
+  display: flex;
+  background-color: white;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2UwZTBlMCIgb3BhY2l0eT0iMC4yIiBzdHJva2Utd2lkdGg9IjEiLz48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZTBlMGUwIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=");
+  height: 100%;
+  width: 100%;
+}
+
+.mxgraph-drawing-container {
+  display: flex;
+  text-align: left;
+  height: 100%;
+  width: 100%;
+}
+
+.mxgraph-toolbar-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 5px;
+  background-color: #e1e1e1;
+  height: auto;
+  text-align: center;
+  justify-content: flex-start;
+}
+
+.mxgraph-toolbar-container > .mxToolbarMode {
+  width: 20px;
+  height: 20px;
+}
+
+.toolbar-separator {
+  margin-left: 10%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 80%;
+  height: 1px;
+  background-color: #515151;
+}
+
+.button-color-change {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: auto;
+  height: 25px;
+}
+
+.compact-picker {
+  margin-top: 10px;
+  width: 102px !important;
+  background-color: white;
+}
+
+.compact-picker > .flexbox-fix {
+  display: block !important;
+}
