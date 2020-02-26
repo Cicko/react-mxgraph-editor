@@ -2,7 +2,6 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import "./styles/diagramEditor.css";
 import { default as MxGraph } from "mxgraph";
-import { mxGraph, mxEvent, mxVertexHandler } from "mxgraph-js";
 import { CompactPicker } from "react-color";
 import {
   initToolbar,
@@ -15,6 +14,9 @@ import {
 const {
   // mxEvent,
   // mxGraph,
+  mxGraph,
+  mxEvent,
+  mxVertexHandler,
   mxConnectionHandler,
   mxImage,
   mxClient,
@@ -194,7 +196,7 @@ export default function App(props) {
     }
     setSelected(evt.cells[0]);
     setColorPickerVisible(false);
-    console.log(mxVertexHandler.getSelectionColor());
+    // console.log(mxVertexHandler.getSelectionColor());
   };
 
   const onElementAdd = evt => {
