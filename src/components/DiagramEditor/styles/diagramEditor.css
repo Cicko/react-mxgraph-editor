@@ -38,14 +38,16 @@
   background-color: #515151;
 }
 
-.button-color-change {
+.button-toolbar-action {
   margin-top: 4px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   justify-content: center;
   width: auto;
   height: 25px;
+  background-color: white;
+  min-width: 70px;
 }
 
 .compact-picker {
@@ -56,4 +58,8 @@
 
 .compact-picker > .flexbox-fix {
   display: block !important;
+}
+
+button {
+  font-size: 9px;
 }

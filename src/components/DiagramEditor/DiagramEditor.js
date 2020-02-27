@@ -12,8 +12,6 @@ import {
 } from "./utils";
 
 const {
-  // mxEvent,
-  // mxGraph,
   mxGraph,
   mxEvent,
   mxVertexHandler,
@@ -225,38 +223,47 @@ export default function App(props) {
     </div>
   );
 
+  const updateCellColor = (type, color) => {
+    graph.setCellStyles(type, color.hex);
+  };
+
+  const pushCellsBack = (moveBack) => () => {
+    graph.orderCells(moveBack);
+  }; 
+
+  const renderMoveBackAndFrontButtons = () => selected && 
+    <React.Fragment>
+          <button className="button-toolbar-action" onClick={pushCellsBack(true)}>Move back</button>
+          <button className="button-toolbar-action" onClick={pushCellsBack(false)}>Move front</button>
+    </React.Fragment>;
+
   const renderColorChange = (type, content) => {
-    if (!selected || !selected.style) {
+    if (!selected) {
       return null;
     }
     return (
-      <div
-        className={"button-color-change"}
+      <button
+        className={"button-toolbar-action"}
         onClick={() => {
           setColorPickerVisible(!colorPickerVisible);
           setColorPickerType(type);
         }}
         style={{
-          backgroundColor: getStyleByKey(selected.style, type)
+          backgroundColor: selected.style && getStyleByKey(selected.style, type)
         }}
       >
         {content}
-      </div>
+      </button>
     );
-  };
-
-  const updateCellColor = (type, color) => {
-    graph.setCellStyles(type, color.hex);
   };
 
   const renderColorPicker = () =>
     colorPickerVisible &&
-    selected &&
-    selected.style && (
+    selected && (
       <div>
         <div className="toolbar-separator" />
         <CompactPicker
-          color={getStyleByKey(selected.style, "fillColor")}
+          color={selected.style && getStyleByKey(selected.style, "fillColor")}
           onChange={color => {
             updateCellColor(colorPickerType, color);
           }}
@@ -269,9 +276,10 @@ export default function App(props) {
       <div className="mxgraph-toolbar-container">
         <div className="mxgraph-toolbar-container" ref={toolbarRef} />
         <div>
-          {renderColorChange("fillColor")}
-          {renderColorChange("fontColor", "T")}
-          {renderColorChange("strokeColor", "|")}
+          {renderMoveBackAndFrontButtons()}
+          {renderColorChange("fillColor", "Change fill color")}
+          {renderColorChange("fontColor", "Change font color")}
+          {renderColorChange("strokeColor", "Change border color")}
         </div>
         {renderColorPicker()}
       </div>
